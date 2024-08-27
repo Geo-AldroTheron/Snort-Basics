@@ -6,7 +6,8 @@ Project Steps
 ## Step 1: Install Snort
 The first step is to make sure that your Ubuntu Operating System is up and running on your VM and that you can ping it from your secondary Operating System (Kali). This means that they should be on the same network or subnet.
 On the Ubuntu System, open the Terminal — located at all programs
- 
+(https://github.com/user-attachments/assets/a7ddb0c6-89d3-4d24-b515-450370eefba0)
+
 Open the terminal above and run the sudo apt-get update command to update the Ubuntu packages, this may take sometime depending on your network strength and VM memory specifications.
 
  
