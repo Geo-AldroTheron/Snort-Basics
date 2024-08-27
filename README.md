@@ -6,14 +6,21 @@ Project Steps
 ## Step 1: Install Snort
 The first step is to make sure that your Ubuntu Operating System is up and running on your VM and that you can ping it from your secondary Operating System (Kali). This means that they should be on the same network or subnet.
 On the Ubuntu System, open the Terminal — located at all programs
-(https://github.com/user-attachments/assets/a7ddb0c6-89d3-4d24-b515-450370eefba0)
 
 Open the terminal above and run the sudo apt-get update command to update the Ubuntu packages, this may take sometime depending on your network strength and VM memory specifications.
 
+![image](https://github.com/user-attachments/assets/b6a4483a-8482-4441-acf2-c1de1e374c0b)
+
  
 After that, type sudo apt-get install snort. This command will install the Snort program and its dependencies.
+
+![image](https://github.com/user-attachments/assets/30e54a8f-bf2f-4fee-8aa4-eb32ef5c3557)
+
  
 Snort will then create different directories where several files are located. These directories may be found using whereis snort command. It will list every directory containing the phrase snort. The directories created by Snort includes:
+
+![image](https://github.com/user-attachments/assets/1f28a36d-3b95-46d3-bbb1-de4923102863)
+
  
 •	/etc/snort:- This is the most important directory to the snort user. It contains the configuration and rules files. This is where the .conf file is found and we shall use it later to do some Snort settings.
 •	/usr/sbin/snort:- This is the executable binary of the Snort IDS/IPS.
@@ -23,15 +30,27 @@ Snort will then create different directories where several files are located. Th
 ## Step 2: Configure Snort
 Now that we’ve understood what snort is and how it is installed, it is time to configure it so as to work as an IDS in our network.
 In order to do the above, we need to navigate to the /etc/snort directory and locate the snort.conf file. This file contains various settings that are necessary for the effective working of Snort IDS.
+
+![image](https://github.com/user-attachments/assets/2a1e95ce-5035-4f5f-907d-fcc4d9320097)
+
  
 In our case, we shall not cover much of what is inside, but a few of them.
 Let’s read the contents of this snort.conf file to see what we can set and what is contained therein. In order to do this, we use the command nano snort.conf — this will open the file in read & write mode where we can be able to edit and save the changes made.
 NB: MAKE SURE YOU HAVE THE ROOT PRIVILEGES WHILE EDITING THE FILE. Use sudo su to switch to the root user and key your password if set.
+
+![image](https://github.com/user-attachments/assets/ec7aecf5-9a98-424e-9c22-be0390a40eaa)
+
  
 A file will open in edit mode, scroll to the part marked as step #1.
+
+![image](https://github.com/user-attachments/assets/ef98385a-238b-46f8-9a2e-aa5303f0f1be)
+
  
 This is the part where we shall set our home network to which we want Snort to monitor. Here, we shall indicate the full mask/subnet of our home network.
 Under the ipvar HOME_NET part, it’s where we set our home address. (Please include the /24 mask). This can be got from your Ubuntu terminal using the command ip a s as below. It is the second inet under the adapter enp0s3
+
+![image](https://github.com/user-attachments/assets/7208b870-840e-434c-9291-9c957f049bf1)
+
  
 After assigning your home address and its subnet in the section above, it;s time to save our changes and exit. Use Ctrl + x, press Y and then Enter key.
 
